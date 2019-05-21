@@ -59,31 +59,7 @@ class Player(): #inputs{name:str, hand:Hand}. #attributes:{player_name:str, play
     # class object. The Payer can then play cards and check if they still have cards.
     # """
 
-        
 
-    # """
-    # This is the Player class, which takes in a name and an instance of a Hand
-    # class object. The Payer can then play cards and check if they still have cards.
-    # """
-
-
-
-    def __init__(self,name,hand:Hand):
-        self.player_name = name
-        self.player_hand = hand
-    def play_card(self,played_card):
-        self.player_hand.remove_card(played_card)
-    def check_empty(self):
-        if self.player_hand.hand_length == 0:
-            return True
-        else:
-            return False
-
-
-    # """
-    # This is the Player class, which takes in a name and an instance of a Hand
-    # class object. The Payer can then play cards and check if they still have cards.
-    # """
 
 my_deck = Deck(SUITE, RANKS)
 hand1 = Hand(my_deck.distribute1())
