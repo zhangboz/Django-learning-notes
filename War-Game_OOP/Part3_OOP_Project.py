@@ -80,42 +80,12 @@ class Player(): #inputs{name:str, hand:Hand}. #attributes:{player_name:str, play
             return True
         else:
             return False
-
-
-    # """
-    # This is the Player class, which takes in a name and an instance of a Hand
-    # class object. The Payer can then play cards and check if they still have cards.
-    # """
-
-        
-
-    # """
-    # This is the Player class, which takes in a name and an instance of a Hand
-    # class object. The Payer can then play cards and check if they still have cards.
-    # """
-
-
-
-    def __init__(self,name,hand:Hand):
-        self.player_name = name
-        self.player_hand = hand
-    def play_card(self,played_card):
-        self.player_hand.remove_card(played_card)
-    def check_empty(self):
-        if self.player_hand.hand_length == 0:
-            return True
-        else:
-            return False
-
-
-    # """
-    # This is the Player class, which takes in a name and an instance of a Hand
-    # class object. The Payer can then play cards and check if they still have cards.
-    # """
+# def round():
+#     cards_on_table = []
+    
 ######################
 #### GAME PLAY #######
 ######################
-print("Welcome to War, let's begin...")
 
 my_deck = Deck(SUITE, RANKS)
 hand1 = Hand(my_deck.distribute1())
@@ -127,7 +97,7 @@ game_over = P1.check_empty() and P2.check_empty
 while game_over == False:
     print(P1.player_hand)
     played_card_2 = random.choice(P2.player_hand.cards)
-    print(played_card_2) ## this line is only for debugging
+    print(played_card_2)
     print("Enter the card you want to play in folloing format. EX: to play spade A, enter S 14")
     user_input = input().upper().split()
     played_card_1 = [user_input[0]]
@@ -151,6 +121,7 @@ while game_over == False:
             i= i+1
             print(cards_on_table)
 
+
         
 
 
@@ -158,3 +129,6 @@ while game_over == False:
 ## Things to fix.
 ## 1. when draw, each player place 3 cards from the top of their hand on table, then place the 4th card from deck to "battle", the winner will take all 8 cards.
 ## 2. upon finish programming, makesure to hide the card computer played.
+
+## def Round: basic idea is to let players compare cards, and give the winner all cards on table and the cards bing compared.
+

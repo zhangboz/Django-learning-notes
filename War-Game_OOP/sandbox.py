@@ -54,12 +54,6 @@ class Player(): #inputs{name:str, hand:Hand}. #attributes:{player_name:str, play
             return False
 
 
-    # """
-    # This is the Player class, which takes in a name and an instance of a Hand
-    # class object. The Payer can then play cards and check if they still have cards.
-    # """
-
-
 
 my_deck = Deck(SUITE, RANKS)
 hand1 = Hand(my_deck.distribute1())
