@@ -112,4 +112,5 @@ while game_over == False:
                     P2.player_hand.add_card(item)                    
 
 ### here are some changes
+### now changes from laptop
                                     
