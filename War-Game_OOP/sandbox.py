@@ -67,7 +67,7 @@ while game_over == False:
     print(P1.player_hand)
     played_card_2 = random.choice(P2.player_hand.cards)
     print(played_card_2)
-    print("Enter the card you want to play in folloing format. EX: to play Spade A, enter S 14")
+    print("----Enter the card you want to play in folloing format. EX: to play Spade A, enter S 14.----")
     user_input = input().upper().split()
     played_card_1 = [user_input[0]]
     played_card_1.append(user_input[1])
@@ -75,7 +75,7 @@ while game_over == False:
     cards_on_table =[]
     cards_on_table.append(played_card_1)
     cards_on_table.append(played_card_2)
-    print("Player 1 played {}{}, Player 2 played {}{}".format(played_card_1[0],played_card_1[1],played_card_2[0],played_card_2[1]))
+    print("----Player 1 played {}{}, Player 2 played {}{}----".format(played_card_1[0],played_card_1[1],played_card_2[0],played_card_2[1]))
     
     if int(played_card_1[1]) > int(played_card_2[1]):
         for item in cards_on_table:
