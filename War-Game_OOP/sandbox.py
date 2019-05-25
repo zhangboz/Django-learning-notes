@@ -111,4 +111,5 @@ while game_over == False:
                 for item in cards_on_table:
                     P2.player_hand.add_card(item)                    
 
+### here are some changes
                                     
