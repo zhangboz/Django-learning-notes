@@ -117,3 +117,13 @@ while game_over == False:
                 for item in cards_on_table:
                     P2.player_hand.add_card(item)       
     rounds = rounds + 1
+
+# After notes:
+# 1. to create a list/tuple with another 2 lists, you can use:
+#     a = [(r,s) for r in R_list for s in S_list].
+# 2. check if a list is empty, you can use:
+#     return len(list) != 0
+#     this would return ture if list is empty and false if list is not empty
+# 3. it is a good idea to use the "return" method in each function, because
+#     this reminds you what the function does. If the function doesnt need to return
+#     anything, at least print some text to tell the debugger what it did.
