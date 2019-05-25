@@ -61,30 +61,54 @@ hand2 = Hand(my_deck.distribute2())
 
 P1 = Player("player1",hand1)
 P2 = Player("player2",hand2)
-game_over = P1.check_empty() and P2.check_empty
+game_over = P1.check_empty() and P2.check_empty()
+
 while game_over == False:
     print(P1.player_hand)
     played_card_2 = random.choice(P2.player_hand.cards)
     print(played_card_2)
-    print("Enter the card you want to play in folloing format. EX: to play spade A, enter S 14")
+    print("Enter the card you want to play in folloing format. EX: to play Spade A, enter S 14")
     user_input = input().upper().split()
     played_card_1 = [user_input[0]]
     played_card_1.append(user_input[1])
     P1.play_card(played_card_1)
+    cards_on_table =[]
+    cards_on_table.append(played_card_1)
+    cards_on_table.append(played_card_2)
     print("Player 1 played {}{}, Player 2 played {}{}".format(played_card_1[0],played_card_1[1],played_card_2[0],played_card_2[1]))
+    
     if int(played_card_1[1]) > int(played_card_2[1]):
-        P1.player_hand.add_card(played_card_1)
-        P1.player_hand.add_card(played_card_2)
+        for item in cards_on_table:
+            P1.player_hand.add_card(item)
     elif int(played_card_1[1]) < int(played_card_2[1]):
-        P2.player_hand.add_card(played_card_1)
-        P2.player_hand.add_card(played_card_2)
+        for item in cards_on_table:
+            P2.player_hand.add_card(item)
     elif int(played_card_1[1]) == int(played_card_2[1]):
-        i = 0
-        cards_on_table =[]
-        while i<3:
-            cards_on_table.append(P1.player_hand.cards[0])
-            P1.play_card(P1.player_hand.cards[0]) 
-            cards_on_table.append(P2.player_hand.cards[0])
-            P2.play_card(P2.player_hand.cards[0])         
-            i= i+1
-            print(cards_on_table)
+        draw = True
+        print("----Battle Starts!----")
+        while draw == True:            
+            i = 0
+            while i<3:
+                cards_on_table.append(P1.player_hand.cards[0])
+                P1.play_card(P1.player_hand.cards[0]) 
+                cards_on_table.append(P2.player_hand.cards[0])
+                P2.play_card(P2.player_hand.cards[0])         
+                i= i+1
+            print("Cards on Table are: ",Hand(cards_on_table))
+            battle_card_1 = P1.player_hand.cards[0]
+            cards_on_table.append(battle_card_1)
+            battle_card_2 = P2.player_hand.cards[0]
+            cards_on_table.append(battle_card_2)
+            print("Battle Card 1: {}{}, Battle Card 2: {}{}".format(battle_card_1[0],battle_card_1[1],battle_card_2[0],battle_card_2[1]))
+            if int(battle_card_1[1]) > int(battle_card_2[1]):
+                draw = False
+                print("player 1 wins battle") 
+                for item in cards_on_table:
+                    P1.player_hand.add_card(item) 
+            elif int(battle_card_1[1]) < int(battle_card_2[1]):
+                draw = False
+                print("player 2 wins battle") 
+                for item in cards_on_table:
+                    P2.player_hand.add_card(item)                    
+
+                                    
