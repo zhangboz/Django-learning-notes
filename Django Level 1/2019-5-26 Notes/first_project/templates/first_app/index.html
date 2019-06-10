@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-{%load static %}
+{%load staticfiles %}
 <html>
     <head>
         <meta charset="utf-8">
         <title>
-            Test Image
+            Django Level Two
         </title>
-        <link rel = "stylesheet" href="{% static "css/mystyle.css"%}">
+        <link rel = "stylesheet" href="{% static "css/style1.css"%}">
     </head>
     <body>
-        <h1>Hello this is testing imgaes</h1>
-        <img src="{% static "images/asuka.png" %}" alt="image failed to load">
+        <h1>Hello this is testing Static imgaes</h1>
+        <img src="{% static "images/asuka.png" %}" alt="image failed to load">        </img>
 
-        </img>
+        <h1></h1>
+        <h2>Here are your access records:</h2>
+        <div class="djangotwo">
+            {% if access_records %}
+                <table>
+                    <thead>
+                      <th>Site Name</th>
+                      <th>Date Acessed</th>
+                    </thead>
+                
+                {% for acc in access_records%}
+                <tr>
+                    <td>{{ acc.name }}</td>
+                    <td>{{ acc.date }}</td>
+                </tr>
+                {% endfor %}
+                </table>
+            {% else %}
+                <p> NO ACESS RECORDS FOUND!</P>
+            {% endif %}
+        </div>
     </body>
 </html>
