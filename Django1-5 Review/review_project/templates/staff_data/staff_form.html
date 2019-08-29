@@ -5,7 +5,7 @@
 <h1>Staff Form</h1>
 
 <div class = "container">
-    <form method ="POST">
+    <form enctype = "multipart/form-data" method ="POST">
         {% csrf_token %}
         {{form.as_p}}
         {{profile_form.as_p}}

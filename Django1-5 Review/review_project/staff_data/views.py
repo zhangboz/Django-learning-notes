@@ -12,8 +12,6 @@ def index(request):
 def staffpage(request):
 
     staff_dict = StaffProfileInfo.objects.all()
-    print(staff_dict)
-
     return render(request,"staff_data/staff_page.html", context = {"staff_data":staff_dict})
 
 
