@@ -7,3 +7,9 @@ class StaffForm(forms.ModelForm):
     class Meta():
         model = User
         fields = ("username","email","password")
+
+
+class StaffProfileInfoForm(forms.ModelForm):
+    class Meta():
+        model = StaffProfileInfo
+        fields = ('protfolio_site','profile_pic')
