@@ -1,11 +1,35 @@
-<html>
+
+{% extends "staff_data/index.html" %}
+
 
 
 
 {% load staticfiles %}
+{% block bodyblock%}
 <title>Staff Page</title>
 <h1>Staff Page</h1>
 <img src="{% static 'staff_data/logo.jpg' %}"> </img>
 
 
-</html>
+
+<table>
+<tr>
+    <th>username</th>
+    <th>email</th>
+</tr>
+        {% if staff_data %}
+            {% for entry in staff_data%}
+                <tr>
+                    <td>  {{ entry.id }} </td>
+                    <td> {{ entry.staff_id }} </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td> EMPTY </td>
+                <td> EMPTY </td>
+            </tr>
+        {% endif %}
+
+</table>
+{% endblock %}

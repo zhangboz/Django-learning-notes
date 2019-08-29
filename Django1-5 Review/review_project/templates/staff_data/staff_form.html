@@ -1,7 +1,15 @@
-<html>
-
+{% extends "staff_data/index.html" %}
+{% block body-block %}
 <title>Staff Form</title>
 
 <h1>Staff Form</h1>
 
-</html>
+<div class = "container">
+    <form method ="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type = "submit" class = "btn btn-primary" value = "Submit">
+    </form>
+</div>
+{% endblock %}}
+
