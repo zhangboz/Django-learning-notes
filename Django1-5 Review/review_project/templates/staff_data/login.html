@@ -1,0 +1,17 @@
+{% comment %} {% extends "staff_data/index.html" %} {% endcomment %}
+
+
+
+{% comment %} {% block body-block %} {% endcomment %}
+    <title>Login Page</title>
+    <form action ="{% url: "staff_data:staff:login" %}" method = "POST">
+        {% csrf_token %}
+        <label for="username">Username:</lable>
+        <input type = "text" name = "username" placeholder = "Enter Username">
+        <label for="password">Password:</lable>
+        <input type = "text" name = "password">
+        <input type = "submit" name ="" value = "Login">
+    </form>
+
+{% comment %} {% endblock %}} {% endcomment %}
+

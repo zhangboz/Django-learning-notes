@@ -10,6 +10,12 @@
             <li><a class = "navbar-brand" href = "{% url "staff_data:staffform" %}">Staff Form</a>
             <li><a class = "navbar-brand" href = "{% url "staff_data:index" %}">Index</a>
             <li><a class = "navbar-brand" href = "{% url "admin:index" %}">Site Administration</a>
+            {% if staff.is_authenticated %}
+                <li><a class = 'navbar-link' href = "{% url 'logout' %}"}>Logout</a>
+            {% else %}
+                <li><a class= 'navbar-link' href = "{% url "staff_data:staff_login_name" %}"> Login</a>
+
+            {% endif %}
         </ul>
     </div>
 </nav>
